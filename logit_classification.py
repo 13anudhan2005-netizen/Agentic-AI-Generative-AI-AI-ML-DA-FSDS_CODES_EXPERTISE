@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-dataset = pd.read_csv(r"C:\Users\mohur\Downloads\logit classification.csv")
+dataset = pd.read_csv(r"Z:\FSDS\Classroom. 9AM Datascience\30-31 dec logictick regression\15. Logistic regression with future prediction\15. Logistic regression with future prediction\Social_Network_Ads.csv")
  
 x = dataset.iloc[:, [2, 3]].values
 y = dataset.iloc[:, -1].values
@@ -47,7 +47,9 @@ cr
 #------- future predition------
 
 
-dataset1= pd.read_csv(r"C:\Users\mohur\Downloads\2.LOGISTIC REGRESSION CODE\2.LOGISTIC REGRESSION CODE\final1.csv")
+dataset1= pd.read_csv(r"Z:\FSDS\Classroom. 9AM Datascience\30-31 dec logictick regression\15. Logistic regression with future prediction\15. Logistic regression with future prediction\Future prediction1.csv")
+
+d2 = dataset1.copy() 
 
 dataset1 = dataset1.iloc[:, [2, 3]].values
 
@@ -63,32 +65,26 @@ d2 ['y_pred1'] = classifier.predict(M)
 
 d2.to_csv('final1.csv')
 
+import os
+os.getcwd()
+
+dataset2 = pd.read_csv(r"Z:\FSDS\Classroom. 9AM Datascience\30-31 dec logictick regression\15. Logistic regression with future prediction\15. Logistic regression with future prediction\Future prediction1.csv")
+
+dataset2 = dataset1.iloc[:, [2, 3]].values
+dataset2.to_csv(classfier)
 
 
 
+df_final.to_csv('y_pred1.to_csv',index=False)
 
+#df_final.to_csv('data_final.csv',index=False)
+
+data_test.to_csv('final.csv')
 
 
 
 
 #**********************************************************************
-
-
-from sklearn.metrics import roc_auc_score, roc_curve
-y_pred_prob = classifire .predict_proba(x_test)[:,1]
-
-auc_score = roc_auc_score(y_true, y_pred_prob)
-auc_score
-
-fpr, trp, thresholds = roc_curve(y_test, y_pred_prob)
-
-plt.figure(figsize=(8,6))
-plt.plot(fpr,tpr, label=f'Logistic Regrssion (AUC ={auc_score:.2f})')
-plt.plot([0,1], [0,1]),'k---'
-plt.xlabel('False Positive Rate')
-plt.ylabel('True Psitive Rate')
-plt.title('ROC curve')
-
 
 
 
